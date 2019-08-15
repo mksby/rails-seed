@@ -18,6 +18,6 @@ Rails.application.routes.draw do
   end
 
   mount API::Base => '/api'
-  get 'swagger', to: redirect('/swagger/dist/index.html?url=http://localhost:3000/api/swagger_doc')
+  get 'swagger', to: redirect('/swagger/dist/index.html?url=http://localhost:3000api/swagger_doc')
 
 end

@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     get 'signout', to: 'users/sessions#destroy'
   end
 
+  authenticate :user do
+    resources :dashboard, only: [:index]
+  end
+
   mount API::Base => '/api'
   get 'swagger', to: redirect('/swagger/dist/index.html?url=http://localhost:3000api/swagger_doc')
 
